@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ComponentesModule } from './componentes/componentes.module';
+
 
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { MenuComponent } from './shared/menu/menu.component';
+import {SlideMenuModule} from 'primeng/slidemenu';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,11 @@ import { MenuComponent } from './shared/menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ComponentesModule,
     MenubarModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    SlideMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
