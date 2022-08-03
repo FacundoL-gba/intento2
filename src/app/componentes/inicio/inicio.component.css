@@ -34,15 +34,22 @@ video {
 .promo h2 {
     font-size: 40px;
     font-family: 'Kaisei Opti', serif;
-    margin-left: -50px;
+    margin-left: -30px;
     text-align: center;
     color: rgb(135, 131, 136);
     font-weight: 700;
 }
+.promo p {
+  font-size: 18px;
+  font-family: 'Kaisei Opti', serif;
+  text-align: center;
+  color: rgba(135, 131, 136, 0.651);
+  font-weight: 700;
+}
 
 
 button {
-    margin-top: 120px;
+    margin-top: 200px;
     position: absolute;
     border: none;
     outline: none;
