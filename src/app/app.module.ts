@@ -11,6 +11,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { MenuComponent } from './shared/menu/menu.component';
 import {SlideMenuModule} from 'primeng/slidemenu';
+import {SplitButtonModule} from 'primeng/splitbutton';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {SlideMenuModule} from 'primeng/slidemenu';
     MenubarModule,
     InputTextModule,
     ButtonModule,
-    SlideMenuModule
+    SlideMenuModule,
+    SplitButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,18 @@
 :root {
     --pink: #ff4081;
   }
-  
+  img {
+    position: relative;
+    margin-left: 10px;
+    height: 35px;
+  }
   body {
     margin: 0;
     background-color: #232e33;
   }
   
   a {
-    font-family: 'Satisfy', cursive;
+    font-family: 'Dosis', sans-serif;
   }
   #navbar {
     width: 100vw;
