@@ -36,20 +36,20 @@ video {
     font-family: 'Kaisei Opti', serif;
     margin-left: -30px;
     text-align: center;
-    color: rgb(135, 131, 136);
+    color: rgb(221, 208, 224);
     font-weight: 700;
 }
 .promo p {
-  font-size: 18px;
-  font-family: 'Kaisei Opti', serif;
+  font-size: 31px;
+  font-family: 'Dancing Script', cursive;
   text-align: center;
-  color: rgba(135, 131, 136, 0.651);
+  color: rgb(221, 208, 224);
   font-weight: 700;
 }
 
 
 button {
-    margin-top: 200px;
+    margin-top: 270px;
     position: absolute;
     border: none;
     outline: none;
@@ -58,7 +58,7 @@ button {
   .custom-btn {
     width: 130px;
     height: 40px;
-    color: rgb(238, 208, 208);
+    color: rgb(216, 157, 157);
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
     font-weight: 500;
