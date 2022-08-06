@@ -12,6 +12,8 @@ import { ButtonModule } from 'primeng/button';
 import { MenuComponent } from './shared/menu/menu.component';
 import {SlideMenuModule} from 'primeng/slidemenu';
 import {SplitButtonModule} from 'primeng/splitbutton';
+import { CardModule, } from 'primeng/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {SplitButtonModule} from 'primeng/splitbutton';
     InputTextModule,
     ButtonModule,
     SlideMenuModule,
-    SplitButtonModule
+    SplitButtonModule,
+    CardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

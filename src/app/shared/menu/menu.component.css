@@ -1,5 +1,5 @@
 :root {
-    --pink: #ff4081;
+    --pink: #7c63bd;
   }
   img {
     position: relative;
@@ -15,7 +15,7 @@
     font-family: 'Dosis', sans-serif;
   }
   #navbar {
-    width: 98.79vw;
+    width: 100vw;
     background-color: #192024;
     font-weight: bold;
   }
@@ -48,7 +48,7 @@
     width: 60%;
   }
   #navbar li a:hover {
-    color:rgb(236, 28, 63);
+    color:#7c63bd;
   }
   #navbar li:first-child {
     margin-right: auto;
