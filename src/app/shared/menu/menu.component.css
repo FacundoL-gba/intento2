@@ -1,4 +1,4 @@
-:root {
+:root { 
     --pink: #7c63bd;
   }
   img {
@@ -12,7 +12,7 @@
   }
   
   a {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Kaisei Opti', serif;
   }
   #navbar {
     width: 100vw;
@@ -30,10 +30,11 @@
   #navbar li a {
     text-decoration: none;
     color: white;
-    padding-right: 3em;
+    padding-right: 3rem;
     position: relative;
     transition: all ease-in-out 250ms;
   }
+
   #navbar li a::after{
     content: "";
     position: absolute;
