@@ -6,16 +6,21 @@ import { CursosComponent } from './cursos/cursos.component';
 import {CardModule} from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import {ImageModule} from 'primeng/image';
+import { PrimeraComponent } from './primera/primera.component';
 
 
 
 @NgModule({
   declarations: [
     InicioComponent,
-    CursosComponent
+    CursosComponent,
+    PrimeraComponent
   ],
   exports: [
     InicioComponent,
+    CursosComponent,
+    PrimeraComponent
+    
   ],
   imports: [
     CommonModule,
