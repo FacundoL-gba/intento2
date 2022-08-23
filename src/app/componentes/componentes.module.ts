@@ -7,6 +7,12 @@ import {CardModule} from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import {ImageModule} from 'primeng/image';
 import { PrimeraComponent } from './primera/primera.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
+import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.component';
+import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,20 +20,22 @@ import { PrimeraComponent } from './primera/primera.component';
   declarations: [
     InicioComponent,
     CursosComponent,
-    PrimeraComponent
+    PrimeraComponent,
+    LoginComponent,
+    RegistrarUsuarioComponent,
+    VerificarCorreoComponent,
+    RecuperarPasswordComponent,
+    DashboardComponent
   ],
   exports: [
-    InicioComponent,
-    CursosComponent,
-    PrimeraComponent
-    
   ],
   imports: [
     CommonModule,
     SlideMenuModule,
     CardModule,
     ButtonModule,
-    ImageModule
+    ImageModule,
+    ReactiveFormsModule
   ]
 })
 export class ComponentesModule { }

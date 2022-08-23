@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentesModule } from './componentes/componentes.module';
+import { AngularFireModule } from '@angular/fire/compat'
 
 
 import { MenubarModule } from 'primeng/menubar';
@@ -14,11 +15,14 @@ import {SlideMenuModule} from 'primeng/slidemenu';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import { CardModule, } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinerComponent } from './shared/spiner/spiner.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    SpinerComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SlideMenuModule,
     SplitButtonModule,
     CardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
