@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
+import { Router } from '@angular/router';
+import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -9,9 +11,14 @@ import { AngularFireAuth } from '@angular/fire/compat/auth'
 })
 export class RegistrarUsuarioComponent implements OnInit {
   registrarUsuario: FormGroup;
+  loading: boolean = false;
 
-  constructor(private fb: FormBuilder,
-    private afAuth: AngularFireAuth) {
+  constructor(
+    private fb: FormBuilder,
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private firebaseError: FirebaseCodeErrorService
+    ) {
     this.registrarUsuario = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -25,23 +32,21 @@ export class RegistrarUsuarioComponent implements OnInit {
     const email = this.registrarUsuario.value.email;
     const password = this.registrarUsuario.value.password;
     const repetirPassword = this.registrarUsuario.value.repetirPassword;
-    this.afAuth.createUserWithEmailAndPassword(email, password).then((user) => {
-      console.log(user);
-    }).catch((error) => {
-      console.log(error);
-      alert(this.firebaseError(error.code))
-    })
-  }
-  firebaseError(code: string) {
-    switch(code) {
-      case 'auth/email-already-in-use':
-        return 'El email ya esta registrado';
-      case 'auth/weak-password':
-        return 'La contraseña es muy debil';
-      case 'auth/invalid-email':
-        return 'Correo no valido';
-      default:
-        return 'Errordesconocido'
+
+    if (password !== repetirPassword) {
+      alert('Las contraseñas no son iguales');
+      return;
     }
+
+    this.loading = true;
+    this.afAuth.createUserWithEmailAndPassword(email, password).then((user) => {
+      this.loading = false;
+      alert('¡Usuario Registrado con Exito!');
+      this.router.navigate(['/login']);
+    }).catch((error) => {
+      this.loading = false;
+      console.log(error);
+      alert(this.firebaseError.codeError(error.code))
+    })
   }
 }

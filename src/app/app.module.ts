@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentesModule } from './componentes/componentes.module';
 import { AngularFireModule } from '@angular/fire/compat'
-
+import { ToastrModule } from 'ngx-toastr';
 
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
@@ -35,7 +35,11 @@ import { environment } from 'src/environments/environment';
     SplitButtonModule,
     CardModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
+  ],
+  exports: [
+    SpinerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

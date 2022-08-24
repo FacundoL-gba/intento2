@@ -13,6 +13,10 @@ import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.co
 import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from './spinner/spinner.component';
+
 
 
 
@@ -25,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegistrarUsuarioComponent,
     VerificarCorreoComponent,
     RecuperarPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    SpinnerComponent
   ],
   exports: [
   ],
@@ -35,7 +40,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CardModule,
     ButtonModule,
     ImageModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class ComponentesModule { }
