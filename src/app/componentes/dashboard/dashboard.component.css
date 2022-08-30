@@ -1,0 +1,35 @@
+.logo {
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+}
+.navbar {
+    background-color: #363732;
+}
+.btn {
+    background-color: transparent;
+    color: #D4AFB9;
+}
+.btn:hover {
+    color: #D4AFB9;
+    background: transparent;
+    box-shadow:none;
+}
+.btn:before,
+.btn:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #D4AFB9;
+    transition:400ms ease all;
+}
+.btn:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}

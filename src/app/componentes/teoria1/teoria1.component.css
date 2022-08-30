@@ -1,0 +1,21 @@
+.col-4 {
+    margin-top: 3rem;
+}
+.tit {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.tit1 {
+    justify-content: center;
+    text-align: start;
+}
+.pi {
+    margin-left: 10px;
+    color: blue;
+}
+.hide {
+    display: none;
+}

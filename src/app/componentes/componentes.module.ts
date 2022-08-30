@@ -6,7 +6,6 @@ import { CursosComponent } from './cursos/cursos.component';
 import {CardModule} from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import {ImageModule} from 'primeng/image';
-import { PrimeraComponent } from './primera/primera.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
 import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.component';
@@ -16,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { Teoria1Component } from './teoria1/teoria1.component';
 
 
 
@@ -24,13 +24,13 @@ import { SpinnerComponent } from './spinner/spinner.component';
   declarations: [
     InicioComponent,
     CursosComponent,
-    PrimeraComponent,
     LoginComponent,
     RegistrarUsuarioComponent,
     VerificarCorreoComponent,
     RecuperarPasswordComponent,
     DashboardComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    Teoria1Component
   ],
   exports: [
   ],
