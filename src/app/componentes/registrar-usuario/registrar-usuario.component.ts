@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
 import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
-
+ 
 @Component({
   selector: 'app-registrar-usuario',
   templateUrl: './registrar-usuario.component.html',
@@ -18,10 +18,10 @@ export class RegistrarUsuarioComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private router: Router,
     private firebaseError: FirebaseCodeErrorService
-    ) {
+    ) { 
     this.registrarUsuario = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       repetirPassword: ['', Validators.required]
     })
   }
@@ -41,12 +41,19 @@ export class RegistrarUsuarioComponent implements OnInit {
     this.loading = true;
     this.afAuth.createUserWithEmailAndPassword(email, password).then((user) => {
       this.loading = false;
-      alert('¡Usuario Registrado con Exito!');
-      this.router.navigate(['/login']);
+      this.verificarCorreo();
     }).catch((error) => {
       this.loading = false;
       console.log(error);
       alert(this.firebaseError.codeError(error.code))
     })
   }
+  verificarCorreo () {
+    this.afAuth.currentUser.then(user => user?.sendEmailVerification()
+      .then(() => {
+        alert('Le enviamos un correo para verificar su email');
+        this.router.navigate(['/login']);
+      })
+    );
+  } 
 }

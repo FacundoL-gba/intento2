@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +16,14 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private firebaseError: FirebaseCodeErrorService
   ) { 
     this.loginUsuario = this.fb.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     })
-  }
+  } 
 
   ngOnInit(): void {
   }
@@ -31,10 +33,14 @@ export class LoginComponent implements OnInit {
     
     this.loading = true;
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
-      this.router.navigate(['/cursos']);
+      if(user.user?.emailVerified) {
+        this.router.navigate(['/cursos']);
+      } else {
+        this.router.navigate(['/verificar-correo']);
+      }
     }).catch((error) => {
       this.loading = false;
-      console.log(error);
+      alert(this.firebaseError.codeError(error.code));
     })
   }
 }

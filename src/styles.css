@@ -43,3 +43,10 @@ html, body {
     background-color: #c6a8ff;
     border-color: #c6a8ff;
 }
+
+.form-floating {
+    text-align: start;
+}
+.errorLabel {
+    margin-left: 5px;
+}
