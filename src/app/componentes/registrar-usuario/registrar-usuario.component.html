@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div *ngIf="!loading" class="body">
-        <img class="logo" src="../../../assets/img/login.png" alt="Login">
+        <img class="logo" src="../../../assets/img/Diseño_sin_título-removebg-preview.png" alt="Login">
         <h1>Registrarse</h1>
         <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
             <div class="form-floating mb-3">
@@ -27,7 +27,7 @@
                 <input type="password" class="form-control" formControlName="repetirPassword" placeholder="Password">
                 <label>Repetir Contraseña</label>
             </div>
-            <button pButton pRipple type="submit" [disabled]="registrarUsuario.invalid" label="Registrarse" class="p-button-rounded p-button-help"></button>
+            <button pButton pRipple type="submit" [disabled]="registrarUsuario.invalid" label="Registrarse" class="p-button-rounded p-button-help animar"></button>
             <a routerLink="/login">Volver</a>
         </form>
     </div>

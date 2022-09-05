@@ -1,0 +1,17 @@
+p {
+    font-size: 18px;
+}
+p::selection {
+    background-color: #634ca7;
+    color: white;
+}
+a {
+    font-size: 18px;
+}
+a::selection {
+    background-color: #634ca7;
+    color: white;
+}
+.animar {
+    margin-bottom: 15px;
+}

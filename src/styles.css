@@ -9,12 +9,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Fugaz+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 
 html, body { 
     margin:0;
-    background-color: #DCE1E9;
+    background-color: #EBC1BE;
 }
-
+h1 { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
+    font-size: 30px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 19.8px; 
+    margin-bottom: 15px;
+}
+@keyframes bounce {
+    30% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+.animar:hover {
+    animation: bounce 1s;
+    box-shadow: -5px -5px 9px #b57edc, 5px 5px 9px #b57edc;
+}
+.animar {
+    box-shadow: 5px 5px 9px #b57edc, -5px -5px 9px #b57edc;
+}
 .wrapper {
     display: flex;
     align-items: center;
@@ -23,7 +46,7 @@ html, body {
 }
 
 .logo {
-    height: 130px;
+    height: 150px;
     margin-bottom: 10px;
 }
 
