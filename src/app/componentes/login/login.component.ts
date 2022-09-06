@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
     private router: Router,
-    private firebaseError: FirebaseCodeErrorService
+    private firebaseError: FirebaseCodeErrorService,
+    private toastr: ToastrService
   ) { 
     this.loginUsuario = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -40,7 +43,7 @@ export class LoginComponent implements OnInit {
       }
     }).catch((error) => {
       this.loading = false;
-      alert(this.firebaseError.codeError(error.code));
+      this.toastr.error(this.firebaseError.codeError(error.code));
     })
   }
 }

@@ -3,13 +3,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
 import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
- 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-registrar-usuario',
   templateUrl: './registrar-usuario.component.html',
   styleUrls: ['./registrar-usuario.component.css']
 })
 export class RegistrarUsuarioComponent implements OnInit {
+  //cree la variable registrarUsuario
   registrarUsuario: FormGroup;
   loading: boolean = false;
 
@@ -17,9 +19,11 @@ export class RegistrarUsuarioComponent implements OnInit {
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
     private router: Router,
-    private firebaseError: FirebaseCodeErrorService
+    private firebaseError: FirebaseCodeErrorService,
+    private toastr: ToastrService
     ) { 
     this.registrarUsuario = this.fb.group({
+      // parametros
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       repetirPassword: ['', Validators.required]
@@ -34,24 +38,25 @@ export class RegistrarUsuarioComponent implements OnInit {
     const repetirPassword = this.registrarUsuario.value.repetirPassword;
 
     if (password !== repetirPassword) {
-      alert('Las contraseñas no son iguales');
+      this.toastr.warning('Las contraseñas no son iguales');
+
       return;
     }
 
     this.loading = true;
-    this.afAuth.createUserWithEmailAndPassword(email, password).then((user) => {
+    this.afAuth.createUserWithEmailAndPassword(email, password).then(() => {
       this.loading = false;
       this.verificarCorreo();
     }).catch((error) => {
       this.loading = false;
       console.log(error);
-      alert(this.firebaseError.codeError(error.code))
+      this.toastr.error(this.firebaseError.codeError(error.code))
     })
   }
   verificarCorreo () {
     this.afAuth.currentUser.then(user => user?.sendEmailVerification()
       .then(() => {
-        alert('Le enviamos un correo para verificar su email');
+        this.toastr.info('Le enviamos un correo para verificar su email');
         this.router.navigate(['/login']);
       })
     );

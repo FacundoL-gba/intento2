@@ -39,7 +39,6 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   exports: [
-    SpinerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

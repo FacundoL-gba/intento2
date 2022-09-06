@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-recuperar-password',
@@ -17,6 +18,7 @@ export class RecuperarPasswordComponent implements OnInit {
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
     private router: Router,
+    private toastr: ToastrService,
     private firebaseError: FirebaseCodeErrorService) {
       this.recuperarUsuario = this.fb.group({
         correo: ['', [Validators.required, Validators.email]]
@@ -29,11 +31,11 @@ export class RecuperarPasswordComponent implements OnInit {
     const email = this.recuperarUsuario.value.correo;
     this.loading = true;
     this.afAuth.sendPasswordResetEmail(email).then(() => {
-      alert('Le enviamos un correo para recuperar su contraseña');
+      this.toastr.info('Le enviamos un correo para recuperar su contraseña');
       this.router.navigate(['/login']);
     }).catch ((error) => {
       this.loading = false;
-      alert(this.firebaseError.codeError(error.code));
+      this.toastr.error(this.firebaseError.codeError(error.code));
     })
   }
 

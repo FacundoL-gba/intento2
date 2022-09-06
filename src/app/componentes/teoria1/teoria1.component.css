@@ -20,5 +20,11 @@
     display: none;
 }
 h1 {
-    font-family: 'Century Gothic';
+    font-family: 'Nunito', sans-serif;
+}
+h3 {
+    font-family: 'Nunito', sans-serif;
+}
+p {
+    font-family: 'Nunito', sans-serif;
 }

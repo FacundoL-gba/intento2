@@ -11,7 +11,7 @@
     border-color: #c6a8ff;
 } 
 body{
-    background: linear-gradient(90deg,black,#022a3c) fixed;
+    background: linear-gradient(90deg,rgb(0, 0, 0),#022a3c) fixed;
     padding:50px;
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
@@ -26,7 +26,7 @@ body{
 }
 
 .card{
-    width: 300px;
+    width: 350px;
     height: auto;
     position: relative;
     background: #fff;

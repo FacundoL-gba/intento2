@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { Teoria1Component } from './teoria1/teoria1.component';
+import { MostrarMasMenosComponent } from './mostrar-mas-menos/mostrar-mas-menos.component';
 
 
 
@@ -30,7 +31,8 @@ import { Teoria1Component } from './teoria1/teoria1.component';
     RecuperarPasswordComponent,
     DashboardComponent,
     SpinnerComponent,
-    Teoria1Component
+    Teoria1Component,
+    MostrarMasMenosComponent
   ],
   exports: [
   ],
@@ -43,6 +45,8 @@ import { Teoria1Component } from './teoria1/teoria1.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ]
 })
 export class ComponentesModule { }
