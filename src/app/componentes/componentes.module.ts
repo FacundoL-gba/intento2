@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { Teoria1Component } from './teoria1/teoria1.component';
 import { MostrarMasMenosComponent } from './mostrar-mas-menos/mostrar-mas-menos.component';
+import { CreateTeoria1Component } from './create-teoria1/create-teoria1.component';
 
 
 
@@ -32,7 +33,8 @@ import { MostrarMasMenosComponent } from './mostrar-mas-menos/mostrar-mas-menos.
     DashboardComponent,
     SpinnerComponent,
     Teoria1Component,
-    MostrarMasMenosComponent
+    MostrarMasMenosComponent,
+    CreateTeoria1Component
   ],
   exports: [
   ],

@@ -15,6 +15,10 @@
 .pi {
     margin-left: 10px;
     color: blue;
+    cursor: pointer;
+}
+.pi-trash {
+    color: red;
 }
 .hide {
     display: none;
@@ -27,4 +31,10 @@ h3 {
 }
 p {
     font-family: 'Nunito', sans-serif;
+}
+
+.btn {
+    float: right;
+    background-color: rgb(26, 150, 92);
+    color: white;
 }

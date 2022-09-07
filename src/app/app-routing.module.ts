@@ -8,6 +8,7 @@ import { VerificarCorreoComponent } from './componentes/verificar-correo/verific
 import { RecuperarPasswordComponent } from './componentes/recuperar-password/recuperar-password.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { Teoria1Component } from './componentes/teoria1/teoria1.component';
+import { CreateTeoria1Component } from './componentes/create-teoria1/create-teoria1.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'inicio', pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'verificar-correo', component:VerificarCorreoComponent},
   {path: 'recuperar-password', component:RecuperarPasswordComponent},
   {path: 'dashboard', component:DashboardComponent},
-  {path: 'teoria1', component:Teoria1Component}
+  {path: 'teoria1', component:Teoria1Component},
+  {path: 'create-teoria1', component:CreateTeoria1Component}
 ];
 
 @NgModule({

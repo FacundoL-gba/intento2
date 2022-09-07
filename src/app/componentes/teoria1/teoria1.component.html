@@ -1,43 +1,45 @@
 <app-dashboard></app-dashboard>
-<div class="container text-center">
-    <div class="row align-items-start">
-        <div class="col-4">
-            <p-card>
-                <h1 class="tit">Gato</h1>
-                <div class="tit1">
-                    <h3>Teoria de la Danza</h3>
-                    <p>¡Descarga la Teoria! <a href="../../../assets/doc/a 1 -el gato.doc"><i class="pi pi-download"></i></a></p>
-                    <h3>Coreografia</h3>
-                    <p>¡Descarga la Coreografia!<a href="../../../assets/doc/a 1 -el gato 1.doc"><i class="pi pi-download"></i></a></p>
-                </div>
-            </p-card>
-        </div>
-        <div class="col-4">
-            <p-card>
-                <h1 class="tit">Gato Cuyano</h1>
-                <div class="tit1">
-                    <h3>Teoria de la Danza</h3>
-                    <p>¡Descarga la Teoria! <a href="../../../assets/doc/a 2 -el gato cuyano.doc"><i class="pi pi-download"></i></a></p>
-                    <h3>Coreografia</h3>
-                    <p>¡Descarga la Coreografia! <a href="../../../assets/doc/a 2 -el gato cuyano 1.doc"><i class="pi pi-download"></i></a></p>
-                </div>
-            </p-card>
-        </div>
-        <div class="col-4">
-            <p-card>
-                <h1 class="tit">Gato Porteño</h1>
-                <div class="tit1">
-                    <h3>Teoria de la Danza</h3>
-                    <p>¡Descarga la Teoria! <a href="../../../assets/doc/a 3- el gato Porteño.doc"><i class="pi pi-download"></i></a></p>
-                    <h3>Coreografias</h3>
-                    <p>¡Descarga las Coreografias!</p>
-                    <span class="hide" id="hideText">
-                    <p>Metrica de Gato<a href="../../../assets/doc/a 3- el gato Porteño 1.doc"><i class="pi pi-download"></i></a></p>
-                    <p>Metrica de Gato Cuyano<a href="../../../assets/doc/a 3- el gato Porteño 2.doc"><i class="pi pi-download"></i></a></p>
-                    <p>Metrica de Gato con Relaciones<a href="../../../assets/doc//a 3- el gato Porteño 3.doc"><i class="pi pi-download"></i></a></p>
-                    </span>
-                </div>
-            </p-card>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Listado de Danzas</span>
+            <button class="btn btn-lg" routerLink="/create-teoria1">Agregar</button>
+            <table class="table table-striped mt-4">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Teoria de la Danza</th>
+                    <th scope="col">Coreografia de la Danza</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Gato</td>
+                    <td><a href="../../../assets/doc/a 1 -el gato.doc"><i class="pi pi-download"></i></a></td>
+                    <td><a href="../../../assets/doc/a 1 -el gato 1.doc"><i class="pi pi-download"></i></a></td>
+                    <td><i class="pi pi-pencil text-info"></i></td>
+                    <td><i class="pi pi-trash"></i></td>
+                </tr>
+                <tr>
+                    <td>Gato Cuyano</td>
+                    <td><a href="../../../assets/doc/a 2 -el gato cuyano.doc"><i class="pi pi-download"></i></a></td>
+                    <td><a href="../../../assets/doc/a 2 -el gato cuyano 1.doc"><i class="pi pi-download"></i></a></td>
+                    <td><i class="pi pi-pencil text-info"></i></td>
+                    <td><i class="pi pi-trash"></i></td>
+                </tr>
+                <tr>
+                    <td>Gato Porteño</td>
+                    <td><a href="../../../assets/doc/a 3- el gato Porteño.doc"><i class="pi pi-download"></i></a></td>
+                    <td>
+                        <a href="../../../assets/doc/a 3- el gato Porteño 1.doc"><i class="pi pi-download"></i></a>
+                        --<a href="../../../assets/doc/a 3- el gato Porteño 2.doc"><i class="pi pi-download"></i></a>
+                        --<a href="../../../assets/doc/a 3- el gato Porteño 3.doc"><i class="pi pi-download"></i></a>
+                    </td>
+                    <td><i class="pi pi-pencil text-info"></i></td>
+                    <td><i class="pi pi-trash"></i></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

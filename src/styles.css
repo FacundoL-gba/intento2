@@ -15,7 +15,10 @@
 
 html, body { 
     margin:0;
-    background-color: #EBC1BE;
+    background: #fffbd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b20a2c, #fffbd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b20a2c, #fffbd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 h1 { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
     font-size: 30px; 
@@ -33,10 +36,10 @@ h1 { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 .animar:hover {
     animation: bounce 1s;
-    box-shadow: -5px -5px 9px #b57edc, 5px 5px 9px #b57edc;
+    box-shadow: -5px -5px 9px #be0029, 5px 5px 9px #be0029;
 }
 .animar {
-    box-shadow: 5px 5px 9px #b57edc, -5px -5px 9px #b57edc;
+    box-shadow: 5px 5px 9px #be0029, -5px -5px 9px #be0029;
 }
 .wrapper {
     display: flex;
@@ -62,9 +65,9 @@ h1 { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 10px;
-    color: #634ca7;
-    background-color: #c6a8ff;
-    border-color: #c6a8ff;
+    color: #be0029;
+    background-color: #be0029;
+    border-color: #be0029;
 }
 
 .form-floating {
