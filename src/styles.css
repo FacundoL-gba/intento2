@@ -18,7 +18,19 @@ html, body {
     background: #fffbd5;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #b20a2c, #fffbd5);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #b20a2c, #fffbd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-size: 500%;
+    animation: fanimado 10s infinite;
+}
+@keyframes fanimado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 h1 { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
     font-size: 30px; 
@@ -36,10 +48,6 @@ h1 { font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 .animar:hover {
     animation: bounce 1s;
-    box-shadow: -5px -5px 9px #be0029, 5px 5px 9px #be0029;
-}
-.animar {
-    box-shadow: 5px 5px 9px #be0029, -5px -5px 9px #be0029;
 }
 .wrapper {
     display: flex;
