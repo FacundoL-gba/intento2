@@ -18,6 +18,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { Teoria1Component } from './teoria1/teoria1.component';
 import { MostrarMasMenosComponent } from './mostrar-mas-menos/mostrar-mas-menos.component';
 import { CreateTeoria1Component } from './create-teoria1/create-teoria1.component';
+import { Teoria2Component } from './teoria2/teoria2.component';
 
 
 
@@ -34,7 +35,8 @@ import { CreateTeoria1Component } from './create-teoria1/create-teoria1.componen
     SpinnerComponent,
     Teoria1Component,
     MostrarMasMenosComponent,
-    CreateTeoria1Component
+    CreateTeoria1Component,
+    Teoria2Component
   ],
   exports: [
   ],

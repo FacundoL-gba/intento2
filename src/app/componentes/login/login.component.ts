@@ -14,12 +14,13 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   loginUsuario: FormGroup
   loading: boolean = false;
+  verificar: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
     private router: Router,
-    private firebaseError: FirebaseCodeErrorService,
+    private _firebaseError: FirebaseCodeErrorService,
     private toastr: ToastrService
   ) { 
     this.loginUsuario = this.fb.group({
@@ -38,12 +39,13 @@ export class LoginComponent implements OnInit {
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
       if(user.user?.emailVerified) {
         this.router.navigate(['/cursos']);
+        this.verificar = true;
       } else {
         this.router.navigate(['/verificar-correo']);
       }
     }).catch((error) => {
       this.loading = false;
-      this.toastr.error(this.firebaseError.codeError(error.code));
+      this.toastr.error(this._firebaseError.codeError(error.code));
     })
   }
 }

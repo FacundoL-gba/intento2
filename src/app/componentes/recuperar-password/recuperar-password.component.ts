@@ -23,7 +23,7 @@ export class RecuperarPasswordComponent implements OnInit {
       this.recuperarUsuario = this.fb.group({
         correo: ['', [Validators.required, Validators.email]]
       })
-     }
+    }
 
   ngOnInit(): void {
   }
