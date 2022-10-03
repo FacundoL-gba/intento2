@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { CookieService } from 'ngx-cookie-service';
+import  firebase from 'firebase/compat/app';
 
 @Component({
   selector: 'app-login',
@@ -14,14 +15,15 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   loginUsuario: FormGroup
   loading: boolean = false;
-  verificar: boolean = false;
+  
 
   constructor(
     private fb: FormBuilder,
     private afAuth: AngularFireAuth,
     private router: Router,
     private _firebaseError: FirebaseCodeErrorService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private cookieService: CookieService
   ) { 
     this.loginUsuario = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  token: string | undefined;
   login() {
     const email = this.loginUsuario.value.email
     const password = this.loginUsuario.value.password
@@ -39,7 +42,12 @@ export class LoginComponent implements OnInit {
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
       if(user.user?.emailVerified) {
         this.router.navigate(['/cursos']);
-        this.verificar = true;
+        firebase.auth().currentUser?.getIdToken().then(
+          token => {
+            this.token = token;
+            
+          }
+        )
       } else {
         this.router.navigate(['/verificar-correo']);
       }

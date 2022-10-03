@@ -37,3 +37,8 @@ td {
 .h3 {
     font-family: 'Nunito', sans-serif;
 }
+button {
+    margin-left: 58rem;
+    justify-content: end;
+    text-align: right;
+}
