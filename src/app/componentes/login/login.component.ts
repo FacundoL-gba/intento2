@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
       if(user.user?.emailVerified) {
-        this.router.navigate(['/cursos']);
         firebase.auth().currentUser?.getIdToken().then(
           token => {
             this.token = token;
-            
+            this.cookieService.set("token", this.token);
           }
         )
+        this.router.navigate(['/cursos']);
       } else {
         this.router.navigate(['/verificar-correo']);
       }
@@ -56,4 +56,9 @@ export class LoginComponent implements OnInit {
       this.toastr.error(this._firebaseError.codeError(error.code));
     })
   }
+  getIdToken(){
+    console.log( this.token )
+    return this.cookieService.get("token");  
+  }
+  
 }

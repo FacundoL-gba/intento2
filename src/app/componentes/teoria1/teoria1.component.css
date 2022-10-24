@@ -42,3 +42,8 @@ button {
     justify-content: end;
     text-align: right;
 }
+
+.btn {
+    background-color: transparent;
+    color: #000000;
+}

@@ -8,7 +8,6 @@ import { VerificarCorreoComponent } from './componentes/verificar-correo/verific
 import { RecuperarPasswordComponent } from './componentes/recuperar-password/recuperar-password.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { Teoria1Component } from './componentes/teoria1/teoria1.component';
-import { CreateTeoria1Component } from './componentes/create-teoria1/create-teoria1.component';
 import { Teoria2Component } from './componentes/teoria2/teoria2.component';
 import { PermissionsGuard } from './guards/permissions.guard';
 
@@ -24,7 +23,6 @@ const routes: Routes = [
   {path: 'dashboard', component:DashboardComponent},
   {path: 'teoria1', component:Teoria1Component},
   {path: 'teoria2', component:Teoria2Component, canActivate: [PermissionsGuard]},
-  {path: 'create-teoria1', component:CreateTeoria1Component}
 ];
 
 @NgModule({

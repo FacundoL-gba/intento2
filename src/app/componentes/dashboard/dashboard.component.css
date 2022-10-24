@@ -5,14 +5,14 @@
     width: 30px;
 }
 .navbar {
-    background-color: #363732;
-}
+    background-color: #3d3d3d;
+} 
 .btn {
     background-color: transparent;
-    color: #D4AFB9;
+    color: #dfcdc3;
 }
 .btn:hover {
-    color: #D4AFB9;
+    color: #dfcdc3;
     background: transparent;
     box-shadow:none;
 }
@@ -24,7 +24,7 @@
     right:0;
     height:2px;
     width:0;
-    background: #D4AFB9;
+    background: #dfcdc3;
     transition:400ms ease all;
 }
 .btn:after{

@@ -10,12 +10,6 @@
     background-color: #be0029;
     border-color: #be0029;
 } 
-body{
-    background: linear-gradient(90deg,rgb(0, 0, 0),#022a3c) fixed;
-    padding:50px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-}
 
 .card-container{
     display: flex;

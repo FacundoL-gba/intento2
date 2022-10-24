@@ -10,21 +10,18 @@ import { ToastrModule } from 'ngx-toastr';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { MenuComponent } from './shared/menu/menu.component';
 import {SlideMenuModule} from 'primeng/slidemenu';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import { CardModule, } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SpinerComponent } from './shared/spiner/spiner.component';
 import { environment } from 'src/environments/environment';
 
 import { CookieService } from 'ngx-cookie-service';
+import { FirebaseCodeErrorService } from './services/firebase-code-error.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuComponent,
-    SpinerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +39,7 @@ import { CookieService } from 'ngx-cookie-service';
   ],
   exports: [
   ],
-  providers: [CookieService],
+  providers: [CookieService, FirebaseCodeErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
